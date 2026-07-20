@@ -12,6 +12,7 @@ const app = express();
 
 app.use(cors({ origin: process.env.FRONTEND_ORIGIN || "*" }));
 app.use(express.json());
+app.use(cors({ origin: ["http://localhost:5173", "https://netlify.app"] }));
 
 app.use("/api/notes", notesRouter);
 app.use("/api/admin", adminRouter);
